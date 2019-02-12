@@ -6,9 +6,11 @@ export default (props) => {
         <div className='todo-controls'>
             <form onSubmit={(event) => {
                 event.preventDefault();
+                const uniqueId = new Date().getTime();
                 props.addItem({
                     title: props.title,
-                    key: new Date().getTime(),
+                    key: uniqueId,
+                    id: uniqueId,
                     checked: false,
                 })
             }}>

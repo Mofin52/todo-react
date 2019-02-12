@@ -6,6 +6,8 @@ export default (props) => {
         <div className='todo-item'>
             <div className='isCompleted'></div>
             <h4>{props.title}</h4>
-            <button type='basic'>x</button>
+            <button type='basic' onClick={(ev) => {
+                props.removeItem(props.id);
+            }}>x</button>
         </div>)
 }

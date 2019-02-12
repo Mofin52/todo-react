@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import TodoControls from './TodoControls';
 import TodoList from './TodoList';
+import './TodoApp.css'
 
 export default class TodoApp extends Component {
     state = {
@@ -21,8 +21,13 @@ export default class TodoApp extends Component {
             textInForm: event.target.value
         });
     }
+
+    removeItem = (id) => {
+        this.setState({
+            todos: [...this.state.todos].filter(item => item.id !== id)
+        })
+    }
     
-    //removeItem
     //editItem
     //reverseItems
     //saveItems/loadItems
@@ -35,7 +40,10 @@ export default class TodoApp extends Component {
                     handleTextChange={this.handleTextChange}
                     title={this.state.textInForm}
                 />
-                <TodoList todos={this.state.todos}/>
+                <TodoList
+                    todos={this.state.todos}
+                    removeItem={this.removeItem}
+                />
             </div>
         )
     }

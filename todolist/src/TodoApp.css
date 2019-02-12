@@ -28,3 +28,22 @@
 .todo-item.done .isCompleted{
     background-color: green;
 }
+.todo-controls {
+    margin-bottom: 20px;
+}
+
+.todo-controls form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-controls input {
+    flex-grow: 3;
+}
+.todo-controls input, .todo-controls button{
+    font-size: 20px;
+}
+
+.todo-controls button[type='basic'] {
+    margin-left: 20px;
+}
