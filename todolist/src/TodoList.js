@@ -7,7 +7,7 @@ export default (props) => {
     return (
         <div className='todo-list'>
             {props.todos.map((elem) => {
-                return <TodoItem text={elem}/>
+                return <TodoItem title={elem.title} key={elem.key}/>
             })}
         </div>
     )
