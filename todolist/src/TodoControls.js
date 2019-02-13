@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 export default (props) => {
     return (
@@ -18,11 +17,15 @@ export default (props) => {
                     onChange={props.handleTextChange}
                     value={props.title}
                 />
-                <button type='submit'>Add</button>
+                <button type='submit'>+</button>
                 <button type='basic' onClick={(ev) => {
                     ev.preventDefault();
                     props.sortItemsByTitle();
-                }}>Sort by title</button>
+                }}>Sort {props.sortOrder}</button>
+                <button type='basic' onClick={(ev) => {
+                    ev.preventDefault();
+                    props.clearData();
+                }}>Clear</button>
             </form>
         </div>
     )

@@ -1,5 +1,5 @@
 .todo-app {
-    width: 400px;
+    width: 500px;
     margin: 0 auto;
 }
 .todo-item {
@@ -13,6 +13,8 @@
     border-bottom: none;
 }
 .todo-item h4{
+    font-size: 20px;
+    font-weight: normal;
     text-align: left;
     width: 80%;
 }
@@ -25,25 +27,62 @@
     cursor: pointer;
 }
 
-.todo-item.done .isCompleted{
+.todo-item.checked h4 {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.todo-item.checked .isCompleted{
     background-color: green;
 }
+
 .todo-controls {
     margin-bottom: 20px;
+    width: 100%;
+    height: 30px;
 }
 
-.todo-controls form {
-    display: flex;
-    justify-content: space-between;
-}
-
-.todo-controls input {
-    flex-grow: 3;
-}
 .todo-controls input, .todo-controls button{
     font-size: 20px;
 }
 
-.todo-controls button[type='basic'] {
-    margin-left: 20px;
+.todo-controls button {
+    min-width: 30px;
+}
+
+.edit-form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);   
+}
+
+.edit-form.hidden {
+    display: none;
+}
+
+.edit-form .container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 100px auto;
+}
+
+.edit-form .edit-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.edit-form input, .edit-form button {
+    font-size: 20px;
 }
