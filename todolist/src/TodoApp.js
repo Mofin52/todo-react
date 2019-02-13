@@ -27,9 +27,17 @@ export default class TodoApp extends Component {
             todos: [...this.state.todos].filter(item => item.id !== id)
         })
     }
+
+    sortItemsByTitle = () => {
+        this.setState({
+            todos: [...this.state.todos].sort((a, b) => {
+                return a.title > b.title ? 1 : -1;
+            })
+        })
+    }
     
     //editItem
-    //reverseItems
+    //reset
     //saveItems/loadItems
 
     render() {
@@ -39,6 +47,7 @@ export default class TodoApp extends Component {
                     addItem={this.addItem}
                     handleTextChange={this.handleTextChange}
                     title={this.state.textInForm}
+                    sortItemsByTitle={this.sortItemsByTitle}
                 />
                 <TodoList
                     todos={this.state.todos}

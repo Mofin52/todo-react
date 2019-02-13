@@ -19,7 +19,10 @@ export default (props) => {
                     value={props.title}
                 />
                 <button type='submit'>Add</button>
-                <button type='basic'>Sort by title</button>
+                <button type='basic' onClick={(ev) => {
+                    ev.preventDefault();
+                    props.sortItemsByTitle();
+                }}>Sort by title</button>
             </form>
         </div>
     )
