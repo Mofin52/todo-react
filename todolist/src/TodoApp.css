@@ -1,7 +1,13 @@
+/* GENERAL APP STYLING */
 .todo-app {
     width: 500px;
     margin: 0 auto;
+    padding: 20px;
+    border: 5px dotted #eee;
+    font-family: sans-serif;
 }
+
+/* ITEM STYLING */
 .todo-item {
     display: flex;
     height: 30px;
@@ -36,20 +42,8 @@
     background-color: green;
 }
 
-.todo-controls {
-    margin-bottom: 20px;
-    width: 100%;
-    height: 30px;
-}
 
-.todo-controls input, .todo-controls button{
-    font-size: 20px;
-}
-
-.todo-controls button {
-    min-width: 30px;
-}
-
+/* EDIT FORM STYLING */
 .edit-form {
     position: absolute;
     left: 0;
@@ -68,11 +62,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 150px;
     border-radius: 20px;
     background-color: #fff;
     margin: 100px auto;
+}
+
+.edit-input {
+    border-radius: 10px;
 }
 
 .edit-form .edit-buttons {
@@ -85,4 +83,80 @@
 
 .edit-form input, .edit-form button {
     font-size: 20px;
+}
+
+
+/* BUTTONS AND CONTROLS*/
+.btn {
+    border-radius: 10px;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 2px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn.btn-edit {
+    background-color: darkgreen;
+}
+.btn.btn-delete {
+    background-color: crimson;
+}
+
+.btn.btn-add {
+    background-color: darkslategray;
+}
+
+.btn.btn-secondary {
+    background-color: darkslategray;
+}
+
+.isCompleted {
+    border-radius: 10px
+}
+
+.control {
+    border-style: solid;
+    padding: 1px 10px;
+    width: 100%;
+}
+
+.rounded-from-left {
+    border-color: darkslategray slategray darkslategray darkslategray;
+    margin-right: -2px;
+    border-radius: 10px 0 0 10px
+}
+.rounded-from-right {
+    border-color: darkslategray darkslategray darkslategray slategray;
+    border-radius: 0 10px 10px 0
+}
+
+.btn-block {
+    display: flex;
+    justify-content: left;
+}
+
+.todo-controls {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 30px;
+}
+
+.todo-controls form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-form {
+    display: flex;
+    flex-grow: 3;
+}
+
+.todo-controls input, .todo-controls button{
+    font-size: 20px;
+}
+
+.todo-controls .btn-block button {
+    min-width: 30px;
+    margin-left: 5px;
 }
